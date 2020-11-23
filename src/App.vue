@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    </div> -->
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      img: require("@/assets/img/common/backgroundTexture.png"),
+      bodyBgImage:
+        "url(" + require("@/assets/img/common/backgroundTexture.png") + ")",
+    };
+  },
+  mounted() {
+    // document.body.style.backgroundSize = "100%";
+    document.body.style.backgroundImage = this.bodyBgImage;
+  },
+};
+</script>
 
 <style>
 #app {
@@ -28,5 +44,11 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 1;
 }
 </style>
