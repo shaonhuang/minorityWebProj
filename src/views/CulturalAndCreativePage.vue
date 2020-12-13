@@ -16,8 +16,16 @@
           infinite-scroll-disabled="disabled"
           id="goodsItemsContainerList"
         >
-          <li v-for="i in count" :key="i" class="list-item" id="goodsItems">
-            {{ i }}
+          <li
+            v-for="i in count"
+            :key="i"
+            class="list-item"
+            id="goodsItems"
+            @click="jumpToPurchased(i)"
+          >
+            <router-link id="goodsItemsLinkTo" :to="'/goodsdetails/' + i">{{
+              i
+            }}</router-link>
           </li>
         </ul>
         <p v-if="loading" style="color:white;">加载中...</p>
@@ -55,6 +63,7 @@ export default {
         this.loading = false;
       }, 2000);
     },
+    jumpToPurchased(i) {},
   },
 };
 </script>
@@ -86,9 +95,14 @@ export default {
   height: 580px;
   width: 580px;
   background-color: white;
-  border: 5px solid black;
   list-style: none;
 }
+#goodsItemsLinkTo {
+  height: 580px;
+  width: 580px;
+  background-color: wheat;
+}
+
 #goodsItems:nth-child(even) {
   background-color: black;
 }

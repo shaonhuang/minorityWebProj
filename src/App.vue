@@ -4,7 +4,11 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <router-view />
+    
+    <keep-alive include="Index">
+  <!-- 将缓存name为test-keep-alive的组件 -->
+  <router-view />
+</keep-alive>
   </div>
 </template>
 

@@ -2,26 +2,100 @@
   <div class="container">
     <div>
       <NavigationBar />
-      <slideShow />
+      <slideShow
+        :passageData="{
+          title: 'childPic',
+          imgBase64: 'huhiuhihiuk',
+          paragraph: 'childPic一段文字3',
+        }"
+      />
     </div>
     <section id="firstIntro">
       <div id="firstIntroTitle">
-        <h3>标题</h3>
+        <h3>布依族简介</h3>
       </div>
       <div id="firstIntroContent">
         <p>
-          织低收种于观管他会平般程族组动化解头日数严织照取省关现得家断证方战各科才精行林此后国常观团火而世圆号化派民县区方米形期变把教法以。又书住计志速将拉们律我位此青运子表动分把门入或往斗被革门京八土结眼老实精确律得影两设采表里事于求划半温为能话油节据果。基们物经低证马清时维千始教张照省更路业军难例动八样断水又家变表收思器约国需京去者动风矿主布。车照领它些规导规议素备专般局少被油农自名个五立严北书在易指西厂观意外党会维再志的于程设条识信。南受计将酸消况期非性且必都果维界较道才量也族调很得变老象来在这示方委来准严认。
+          布依族，中国西南部一个较大的少数民族，民族语言为布依语，汉藏语系壮侗语族壮傣语支，与壮语有密切的亲属关系，通用汉文。
+          布依族由古代僚人演变而来，以农业为主，布依族祖先很早就开始种植水稻，享有“水稻民族”之称，有自己的语言文字，文字古布依文。
         </p>
       </div>
     </section>
     <section>
       <div>
-        <descriptionItem />
-        <descriptionItem />
-        <descriptionItem />
-        <descriptionItem />
-        <descriptionItem />
-        <descriptionItem />
+        <descriptionItem
+          v-bind:info="{
+            imgSrc: 'assets/img/Index/descriptionItemsPic/childPic.jpg',
+            description: '传入描述性文字',
+            clickPath: 'childPic',
+          }"
+          :passageData="{
+            title: 'childPic',
+            imgBase64: 'huhiuhihiuk',
+            paragraph: 'childPic一段文字1',
+          }"
+        ></descriptionItem>
+        <descriptionItem
+          v-bind:info="{
+            imgSrc: 'assets/img/Index/descriptionItemsPic/wovenClothes.jpg',
+            description: '传入描述性文字',
+            clickPath: 'wovenClothes',
+          }"
+          :passageData="{
+            title: 'childPic',
+            imgBase64: 'huhiuhihiuk',
+            paragraph: 'childPic一段文字2',
+          }"
+        ></descriptionItem>
+        <descriptionItem
+          v-bind:info="{
+            imgSrc:
+              'assets/img/Index/descriptionItemsPic/sittingTogetherAndSinging.jpg',
+            description: '传入描述性文字',
+            clickPath: 'sittingTogetherAndSinging',
+          }"
+          :passageData="{
+            title: 'childPic',
+            imgBase64: 'huhiuhihiuk',
+            paragraph: 'childPic一段文字3',
+          }"
+        ></descriptionItem>
+        <descriptionItem
+          v-bind:info="{
+            imgSrc: 'assets/img/Index/descriptionItemsPic/drinkWine.jpg',
+            description: '传入描述性文字',
+            clickPath: 'drinkWine',
+          }"
+          :passageData="{
+            title: 'childPic',
+            imgBase64: 'huhiuhihiuk',
+            paragraph: 'childPic一段文字4',
+          }"
+        ></descriptionItem>
+        <descriptionItem
+          v-bind:info="{
+            imgSrc: 'assets/img/Index/descriptionItemsPic/underUmbrellaPic.png',
+            description: '传入描述性文字',
+            clickPath: 'underUmbrellaPic',
+          }"
+          :passageData="{
+            title: 'childPic',
+            imgBase64: 'huhiuhihiuk',
+            paragraph: 'childPic一段文字5',
+          }"
+        ></descriptionItem>
+        <descriptionItem
+          v-bind:info="{
+            imgSrc: 'assets/img/Index/descriptionItemsPic/funeral.jpg',
+            description: '传入描述性文字',
+            clickPath: 'funeral',
+          }"
+          :passageData="{
+            title: 'childPic',
+            imgBase64: 'huhiuhihiuk',
+            paragraph: 'childPic一段文字6',
+          }"
+        ></descriptionItem>
       </div>
     </section>
     <section>

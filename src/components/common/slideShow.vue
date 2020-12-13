@@ -4,7 +4,9 @@
       <ul>
         <li v-for="(item, index) in items" :key="index">
           <div v-if="currentPageIndex === index">
-            <img :src="item.Uri" alt="nothing to be show" />
+            <a @click="routerTo(DataPassageData)">
+              <img :src="item.Uri" alt="nothing to be show" />
+            </a>
           </div>
         </li>
       </ul>
@@ -22,6 +24,22 @@
 <script>
 export default {
   name: "slideShow",
+  props: {
+    passageData: {
+      title: {
+        type: String,
+        default: "childPic",
+      },
+      imgBase64: {
+        type: String,
+        default: "huhiuhihiuk",
+      },
+      paragraph: {
+        type: String,
+        default: "childPic一段文字",
+      },
+    },
+  },
   data() {
     return {
       items: [
@@ -35,6 +53,7 @@ export default {
       ],
       dots: [1, 2, 3, 4, 5],
       currentPageIndex: 0,
+      DataPassageData: this.passageData,
     };
   },
   props: {
@@ -76,6 +95,29 @@ export default {
           this.currentPageIndex = 0;
         }
       }, this.interval);
+    },
+
+    routerTo(passageData) {
+      console.log(this.DataPassageData);
+      if (passageData != null) {
+        this.$router.push({
+          name: "/passage/" + this.info.clickPath,
+          params: {
+            title: passageData.title,
+            imgBase64: passageData.imgBase64,
+            paragraph: passageData.paragraph,
+          },
+        });
+      } else {
+        this.$router.push({
+          name: "/passage/" + "test",
+          params: {
+            title: "test",
+            imgBase64: "test",
+            paragraph: "test paragraph",
+          },
+        });
+      }
     },
   },
   created() {

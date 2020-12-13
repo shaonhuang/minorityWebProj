@@ -34,6 +34,7 @@ export default {
   padding-left: 40px;
   width: 56px;
   height: 28px;
+  color: white;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 12%;
   transition: width 0.5s;

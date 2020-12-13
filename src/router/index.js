@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Index from '../views/Index.vue'
 import PagesDetails from '../views/Detail.vue'
 import CulturalAndCreativePage from '../views/CulturalAndCreativePage.vue'
 import ShoppingPage from '../views/ShoppingPage.vue' 
 import GoodsDetails from '../components/GoodsDetails.vue'
+import Passage from '../components/Passage.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +13,8 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+
   },
   {
     path:'/detail',
@@ -31,22 +32,39 @@ const routes = [
     component:ShoppingPage
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path: '/goodsdetails',
+    path: '/goodsdetails/:id',
     name: 'GoodsDetails',
     component: GoodsDetails,
+  },
+  {
+    path: '/passage/childPic',
+    name: '/passage/childPic',
+    component: Passage,
+  },
+  {
+    path: '/passage/wovenClothes',
+    name: '/passage/wovenClothes',
+    component: Passage,
+  },
+  {
+    path: '/passage/sittingTogetherAndSinging',
+    name: '/passage/sittingTogetherAndSinging',
+    component: Passage,
+  },
+  {
+    path: '/passage/drinkWine',
+    name: '/passage/drinkWine',
+    component: Passage,
+  },
+  {
+    path: '/passage/underUmbrellaPic',
+    name: '/passage/underUmbrellaPic',
+    component: Passage,
+  },
+  {
+    path: '/passage/funeral',
+    name: '/passage/funeral',
+    component: Passage,
   },
 ]
 

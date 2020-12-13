@@ -119,14 +119,14 @@ export default {
   height: 1000px;
   width: 1200px;
   margin: 0 auto;
-  border: 5px solid black;
+
   flex-direction: column;
 }
 #bottomPageFirstImageAndContent {
   width: 1200px;
   height: 500px;
 
-  border: 5px solid black;
+
 }
 #bottomPageFirstImageAndContent img {
   float: left;
@@ -143,7 +143,7 @@ export default {
 #bottomPageSecondImageAndContent {
   width: 1200px;
   height: 500px;
-  border: 5px solid black;
+
 }
 #bottomPageSecondImageAndContent img {
   float: right;
@@ -220,7 +220,6 @@ export default {
   flex-direction: column;
   height: 600px;
   width: 600px;
-  border: 5px solid black;
   background-color: white;
 }
 #QRPageQRContainer span {
@@ -234,6 +233,5 @@ export default {
 }
 #QRPageQRContainer svg {
   display: fixed;
-  border: 5px solid black;
 }
 </style>

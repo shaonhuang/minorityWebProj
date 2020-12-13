@@ -1,14 +1,14 @@
 <template>
   <div id="itemContainer">
     <div id="leftContent">
-      <a href="">
-        <img :src="imgSrc" alt="nothing" />
+      <a @click="routerTo(DataPassageData)">
+        <img :src="normalizedImgSrc" alt="nothing" />
       </a>
     </div>
     <div id="rightContent">
       <p id="description">
-        <a href="">
-          {{ description }}
+        <a @click="routerTo(DataPassageData)">
+          {{ this.infoData.description }}
         </a>
       </p>
     </div>
@@ -19,18 +19,79 @@
 export default {
   name: "descriptionItem",
   props: {
-    imgSrc: {
-      type: String,
-      default: require("@/assets/img/Index/descriptionItemsPic/childPic.jpg"),
+    info: {
+      type: Object,
+      default() {
+        return {
+          imgSrc: {
+            type: String,
+            default: "assets/img/Index/descriptionItemsPic/childPic.jpg",
+          },
+          description: {
+            type: String,
+            default: "传入描述性文字",
+          },
+          clickPath: {
+            type: String,
+            default: "childPic",
+          },
+        };
+      },
     },
-    description: {
-      type: String,
-      default:
-        "金算政常前率干少数实个起局红要型类第酸流连委标过高什身复个节基记作南题道容里。再最义品米连说表术号身七之以增型果系志际亲总维件三传需阶制机叫动能准确群指维调体。了处走习",
+    passageData: {
+      title: {
+        type: String,
+        default: "childPic",
+      },
+      imgBase64: {
+        type: String,
+        default: "huhiuhihiuk",
+      },
+      paragraph: {
+        type: String,
+        default: "childPic一段文字",
+      },
     },
-    clickPath: {
-      type: String,
-      default: "",
+  },
+  data() {
+    return {
+      infoData: this.info,
+      DataPassageData: this.passageData,
+    };
+  },
+  computed: {
+    normalizedImgSrc() {
+      if (
+        this.info.imgSrc != "assets/img/Index/descriptionItemsPic/childPic.jpg"
+      ) {
+        return require("@/" + this.info.imgSrc);
+      } else {
+        return require("@/assets/img/Index/descriptionItemsPic/childPic.jpg");
+      }
+    },
+  },
+  methods: {
+    routerTo(passageData) {
+      console.log(this.DataPassageData);
+      if (passageData != null) {
+        this.$router.push({
+          name: "/passage/" + this.info.clickPath,
+          params: {
+            title: passageData.title,
+            imgBase64: passageData.imgBase64,
+            paragraph: passageData.paragraph,
+          },
+        });
+      } else {
+        this.$router.push({
+          name: "/passage/" + "test",
+          params: {
+            title: "test",
+            imgBase64: "test",
+            paragraph: "test paragraph",
+          },
+        });
+      }
     },
   },
 };
